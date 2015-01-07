@@ -38,5 +38,5 @@ Os tranquilos olhos verdes.
 No instante em que se torna uma eternidade.
 O equipamento azul simbolizando seus balanços no vento.
 
-_______ Uma leve luz azul filtra.
+_______ Uma leve luz azul filtra. 
 O cabelo dourado brilha à luz do luar.
