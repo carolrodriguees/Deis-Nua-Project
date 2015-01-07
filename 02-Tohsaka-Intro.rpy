@@ -18,7 +18,7 @@ Ele me contou sobre as jóias de família , as jóias herdadas do mestre, e como
 Como ele estava me contando todas as coisas que eu ainda não conhecia, eu percebi mesmo como uma criança.
 
 _____ Muito provavelmente...
-Ele não iria voltar.
+Ele não iria voltar. 
 ...A guerra tinha começado.
 Não uma guerra entre os países, mas sim uma guerra entre pessoas.
 Mas os únicos em guerra eram sete pessoas.
