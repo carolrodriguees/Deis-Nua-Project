@@ -80,3 +80,4 @@ também há coisas possíveis apenas através da magia.
 Ele foi o mestre da família Tohsaka que disse que se a ciência está se movendo em direção ao futuro, a magia está se movendo em direção ao passado.
 Algo sobre o passado eo futuro acabar no mesmo lugar, tudo sempre correndo em direção ao ponto zero.
 Vamos adiar todas essas discussões difíceis. Eles devem esperar até que estamos velhos.
+ 
