@@ -1,54 +1,54 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
+*.rpyc
+*.rpyb
+*.rpymc
+*.pyc
+*.pyo
 
-# C extensions
-*.so
+*~
+*.bak
 
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
+saves
+tmp
+cache
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+log.txt
+/errors.txt
+/traceback.txt
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+styles.txt
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.cache
-nosetests.xml
-coverage.xml
+/android
+/build
+/dist
+/dists
+/renpy.app
+/jedit
+/lint.txt
+/renpy.code
+/*testing*
+/screenshot*
+/renpy.exe
+/lib
+/lib.old
+/doc
+/.pydevproject
+/.pydevproject.bak
+/.project
+/.settings
+/LICENSE.txt
+/templates/english/README.html
+/the_question/README.html
+/tutorial/README.html
+/renpy/angle/*.pyx
+/renpy/angle/*.pxd
+/renpy-ppc.zip
+/module/build
+/module/gen
+/editra
+/launcher/game/theme
+/launcher/game/script_version.rpy
 
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
+dl
+renpy/vc_version.py
+.externalToolBuilders
+rapt
