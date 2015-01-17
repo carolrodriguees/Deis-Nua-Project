@@ -18,6 +18,7 @@
 define narrador = Character(None, kind=nvl)
 
 #Backgrounds
+image rated1 = "00rated01.png"
 image fatestn = "titleopt.png"
 image prologo01 = "0prologo01.png"
 image prologo02 = "0prologo02.png"
@@ -33,11 +34,14 @@ image prologorin = "1prologo01.png"
 image casarin1blur = "1casarin01-blur.png"
 image casarin1 = "1casarin01.png"
 image blackmagi = "1blackmagi.png"
+image casarin2 = "1casarin02.png"
+image casarin3out = "1casarin03.png"
 image splash = "splash.png"
 image splash2 = "splash2.png"
 image splash3 = "splash3.png"
 image white = Solid("#ffffff")
 define flash = Fade(0.1, 0.0, 0.5, color="#fff")
+image movie = Movie(size=(1024, 786))
 #Public var
 init:
     $ centro = Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5)
@@ -64,21 +68,23 @@ return
 
 #Inicio
 label start:
-    stop music
-    scene fatestn with Dissolve(2)
+    stop music fadeout 4
+    scene fatestn with Dissolve(5)
+    scene rated1 with Dissolve(3)
+    with Pause(2)
     narrador "―――――――――――――――\nAtenção!\n―――――――――――――――\nEsta é uma obra de ficção.\nTodas as configurações desta história são fictícias e não têm nenhuma conexão com quaisquer indivíduos ou organizações reais.\nTodos os personagens que aparecem neste jogo tem mais de 18 anos de idade."
     nvl clear
+    "Escolha com sabedoria!"
     menu censura:
-        narrador "―――――――――――――――\nEscolha com sabedoria!\n―――――――――――――――?"
-        
+        "Escolha com sabedoria!"
         "Fate/Stay Night (12+)":
+            $ rated = "kids"
             call introfate
         "Fate/Stay Night (16+)":
+            $ rated = "ecchi"
             call introfate
         "Fate/Stay Night (18+)":
+            $ rated = "hentai"
             call introfate
-#    $ renpy.movie_cutscene("introfate.ogv")
-#    $ renpy.movie_cutscene("introbone.ogv")
-#    $ renpy.movie_cutscene("introfeels.ogv")
 ### Prólogo Tohsaka Rin
 return
