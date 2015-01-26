@@ -184,13 +184,21 @@ screen main_menu:
     # The main menu buttons.
     window:
         style "mm_root"
-        imagebutton idle "btnewidle.png" hover "btnewhover.png" xpos 120 ypos 650 focus_mask True action Start() 
-    
-        imagebutton idle"btloadidle.png" hover "btloadhover.png" xpos 320 ypos 650 focus_mask True action ShowMenu('load')
-    
-        imagebutton idle "btoptionidle.png" hover "btoptionhover.png" xpos 520 ypos 650 focus_mask True action ShowMenu('preferences')
-
-        imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 720 ypos 650 focus_mask True action Quit(confirm=False)
+        
+################################################## Backgrounds Variados ##############################
+    if globalSave.titleMenu == "saberApp":
+        image "0prologo03.png"
+        
+        ##############################################################################################
+        
+################################################## Botões Main Menu #######################################################################
+    imagebutton idle "btnewidle.png" hover "btnewhover.png" xpos 120 ypos 650 focus_mask True action Start() 
+    imagebutton idle"btloadidle.png" hover "btloadhover.png" xpos 320 ypos 650 focus_mask True action ShowMenu('load')
+    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" xpos 520 ypos 650 focus_mask True action ShowMenu('preferences')
+    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 720 ypos 650 focus_mask True action Quit(confirm=True)
+        
+        ###################################################################################################################################
+        
     # Fondo del menú principal.
 
 init -2:
@@ -212,13 +220,18 @@ screen navigation:
     # Fondo de los menús del juego.
     window:
         style "gm_root"
+#################################################### Backgrounds Variados #########################################################################################################################################################
     
-    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 300 focus_mask  True action Return()
-    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 360 focus_mask  True action ShowMenu("preferences")
-    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 420 focus_mask  True action ShowMenu("save")
-    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 480 focus_mask  True action ShowMenu("load")
-    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 540 focus_mask  True action MainMenu()
-    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 600 focus_mask  True action Quit()
+    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return()
+    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences")
+    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save")
+    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load")
+    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()
+    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps")
+    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit()
+    
+    ################################################################################################################################################################################################################################
+    
     # Botones de navegación.
 #    frame:
  #       style_group "gm_nav"
@@ -256,8 +269,10 @@ init -2:
 screen file_picker:
 
     frame:
+        xpos 40
+        ypos 50
         style "file_picker_frame"
-
+        
         has vbox
 
         # Los botones superiores permiten al usuario escoger entre
@@ -268,13 +283,13 @@ screen file_picker:
             textbutton _("Previous"):
                 action FilePagePrevious()
 
-            textbutton _("Auto"):
-                action FilePage("auto")
+            #textbutton _("Auto"):
+            #    action FilePage("auto")
 
             textbutton _("Quick"):
                 action FilePage("quick")
 
-            for i in range(1, 9):
+            for i in range(1, 8):
                 textbutton str(i):
                     action FilePage(i)
 
@@ -287,14 +302,18 @@ screen file_picker:
         # Presenta una cuadrícula de espacios para archivos.
         grid columns rows:
             transpose True
-            xfill True
+            xfill False
             style_group "file_picker"
-
+            xmaximum 600
+            
             # Presenta diez espacios para archivos, numerados de 1 a 10.
             for i in range(1, columns * rows + 1):
 
                 # Cada espacio es un botón.
                 button:
+                    xsize 325
+                    ysize 70
+                    ypadding 3
                     action FileAction(i)
                     xfill True
 
@@ -312,15 +331,70 @@ screen file_picker:
                     key "save_delete" action FileDelete(i)
 
 
-screen save:
-
+screen save2:
     # Esta linea asegura que las otras pantallas de menú son reemplazadas.
     tag menu
-
-    use navigation
+    
+    if gambTheme:
+        if globalSave.titleMenu == "saberApp":
+            image "0prologo03_blur.png"
+        else:
+            image "titleopt.png"
+    else:
+        image "layeradd.png"
+        
+        
+    text "Salvar" xanchor 0.5 xpos 0.873 ypos 45
+    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return()
+    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences")
+    if botaoSave == "menu":
+        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True
+    else:
+        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2")
+    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load")
+    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()
+    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps")
+    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit()
+    
     use file_picker
 
 screen load:
+
+    # Esta linea asegura que las otras pantallas de menú son reemplazadas.
+    tag menu
+    
+    if gambTheme:
+        if globalSave.titleMenu == "saberApp":
+            image "0prologo03_blur.png"
+        else:
+            image "titleopt.png"
+    else:
+        image "layeradd.png"
+        
+        
+    text "Carregar" xanchor 0.5 xpos 0.873 ypos 45
+    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return()
+    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences")
+    if botaoSave == "menu":
+        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True
+    else:
+        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2")
+    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load")
+    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()
+    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps")
+    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit()
+    
+    use file_picker
+
+screen save3:
+    # Esta linea asegura que las otras pantallas de menú son reemplazadas.
+    tag menu
+    use navigation
+    
+    image "layeradd.png"
+    use file_picker
+
+screen load2:
 
     # Esta linea asegura que las otras pantallas de menú son reemplazadas.
     tag menu
@@ -334,7 +408,7 @@ init -2:
     style file_picker_nav_button_text is small_button_text
     style file_picker_button is large_button
     style file_picker_text is large_button_text
-
+    
 
 ##############################################################################
 # Opciones
@@ -342,12 +416,172 @@ init -2:
 # Pantalla que permite al usuario cambiar las opciones.
 # http://www.renpy.org/doc/html/screen_special.html#preferences
 
+
+screen helps:
+    tag menu
+    
+    if gambTheme:
+        if globalSave.titleMenu == "saberApp":
+            image "0prologo03_blur.png"
+        else:
+            image "titleopt.png"
+    else:
+        image "layeradd.png"
+    
+    
+    vbox:
+        xpos 40
+        ypos 50
+        
+        frame:
+            ymargin 3
+            has vbox
+            text "                                                                       "
+            text "                                                                       "
+        frame:
+            ymargin 3
+            has vbox
+            text "                                                                       "
+            text "                                                                       "
+        frame:
+            ymargin 3
+            has vbox
+            text "                                                                       "
+            text "                                                                       "
+        frame:
+            ymargin 3
+            has vbox
+            text "                                                                       "
+            text "                                                                       "
+        frame:
+            ymargin 3
+            has vbox
+            text "                                                                       "
+            text "                                                                       "
+        frame:
+            ymargin 3
+            has vbox
+            text "                                                                       "
+            text "                                                                       "
+        frame:
+            ymargin 3
+            has vbox
+            text "                                                                       "
+            text "                                                                       "
+        frame:
+            xpos 1.063
+            ypos -1.1
+            has vbox
+            textbutton "Mais ajuda!" action Help()
+    
+    imagebutton idle "ajuda/right.png" hover "ajuda/right.png" xpos 170 ypos 63 focus_mask True
+    imagebutton idle "ajuda/esc.png" hover "ajuda/esc.png" xpos 55 ypos 63 focus_mask True
+    text "Pausa o jogo e mostra o menu." xanchor 1.0 xpos 0.74 ypos 0.1
+    text "{color=#00f} ▪{/color}" xpos 124 ypos 0.1
+    
+    imagebutton idle "ajuda/return.png" hover "ajuda/return.png" xpos 55 ypos 159 focus_mask True
+    imagebutton idle "ajuda/space.png" hover "ajuda/space.png" xpos 150 ypos 159 focus_mask True
+    imagebutton idle "ajuda/left.png" hover "ajuda/left.png" xpos 295 ypos 159 focus_mask True
+    text "Segue na história." xanchor 1.0 xpos 0.74 ypos 0.23
+    text "{color=#00f} ▪{/color}" xpos 124 ypos 0.217
+    text "{color=#00f} ▪{/color}" xpos 245 ypos 0.217
+    
+    imagebutton idle "ajuda/ctrl.png" hover "ajuda/ctrl.png" xpos 55 ypos 256 focus_mask True
+    text "Pressionando, ativa o modo rápido." xanchor 1.0 xpos 0.74 ypos 0.35
+    
+    imagebutton idle "ajuda/tab.png" hover "ajuda/tab.png" xpos 55 ypos 354 focus_mask True
+    text "Ativa ou Desativa o modo rápido." xanchor 1.0 xpos 0.74 ypos 0.475 
+
+    imagebutton idle "ajuda/scroll.png" hover "ajuda/scroll.png" xpos 70 ypos 446 focus_mask True
+    text "Avança ou Retrocede na história." xanchor 1.0 xpos 0.74 ypos 0.60
+    
+    imagebutton idle "ajuda/h.png" hover "ajuda/h.png" xpos 55 ypos 543 focus_mask True
+    imagebutton idle "ajuda/mid.png" hover "ajuda/mid.png" xpos 160 ypos 541 focus_mask True
+    text "Oculta tudo e mostra o Backgroud." xanchor 1.0 xpos 0.74 ypos 0.73
+    text "{color=#00f}▪{/color}" xpos 130 ypos 0.72
+    
+    imagebutton idle "ajuda/f.png" hover "ajuda/f.png" xpos 55 ypos 640 focus_mask True
+    text "Alterna entre Janela e Tela Cheia." xanchor 1.0 xpos 0.74 ypos 0.85
+    
+    text "Ajuda" xanchor 0.5 xpos 0.873 ypos 45
+    
+    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return()
+    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences")
+    if botaoSave == "menu":
+        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True
+    else:
+        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2")
+    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load")
+    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()
+    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps")
+    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit()
+    
+    
+
+## Tela de Pause
+screen save:
+    
+    tag menu
+    modal True
+    
+    image "layeradd.png"
+    text "Pause" xanchor 0.5 xpos 0.873 ypos 45
+    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask True action Return()
+    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences")
+    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2")
+    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load")
+    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()
+    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps")
+    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit() 
+    
+    #key "K_ESCAPE" action Hide("pausegame")
+    #window:
+        #style "menu_pause"
+        #id "my_id"
+        #align (0.0, 0.0)
+        #at my_transf    
+        #xmargin 10
+        #ymargin 10
+    #frame:
+    #    xfill True
+    #    xmargin 10
+    #    ymargin 10
+    #    hbox:
+    #        text " Pause"
+    
+           
+    
+    
+screen mymenu:
+    key "mousedown_3" action If(renpy.get_screen("pausegame"), Hide("pausegame"), Show("pausegame"))
+    key "K_ESCAPE" action If(renpy.get_screen("pausegame"), Hide("pausegame"), Show("pausegame"))
+
+
+
+
 screen preferences:
 
     tag menu
 
     # Incluye la navegación.
-    use navigation
+    if gambTheme:
+        if globalSave.titleMenu == "saberApp":
+            image "0prologo03_blur.png"
+        else:
+            image "titleopt.png"
+    else:
+        image "layeradd.png"
+    text "Opções" xanchor 0.5 xpos 0.873 ypos 45
+    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return()
+    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences")
+    if botaoSave == "menu":
+        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True
+    else:
+        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2")
+    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load")
+    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()
+    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps")
+    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit()     
 
     # Coloca las columnas de navegación en una cuadrícula de anchura 3.
     grid 3 1:
@@ -356,21 +590,24 @@ screen preferences:
 
         # Columna izquierda.
         vbox:
+            xpos 100
+            ypos 100
+            
             frame:
                 style_group "pref"
                 has vbox
-
+                
                 label _("Display")
                 textbutton _("Window") action Preference("display", "window")
                 textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Transitions")
-                textbutton _("All") action Preference("transitions", "all")
-                textbutton _("None") action Preference("transitions", "none")
+            #frame:
+             #   style_group "pref"
+              #  has vbox
+#
+ #               label _("Transitions")
+  #              textbutton _("All") action Preference("transitions", "all")
+   #             textbutton _("None") action Preference("transitions", "none")
 
             frame:
                 style_group "pref"
@@ -384,42 +621,14 @@ screen preferences:
                 has vbox
 
                 textbutton _("Joystick...") action Preference("joystick")
-
-
-        vbox:
+            
             frame:
                 style_group "pref"
                 has vbox
 
-                label _("Skip")
-                textbutton _("Seen Messages") action Preference("skip", "seen")
-                textbutton _("All Messages") action Preference("skip", "all")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                textbutton _("Begin Skipping") action Skip()
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("After Choices")
-                textbutton _("Stop Skipping") action Preference("after choices", "stop")
-                textbutton _("Keep Skipping") action Preference("after choices", "skip")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Auto-Forward Time")
+                label _("Velocidade do avanço automático")
                 bar value Preference("auto-forward time")
-
-                if config.has_voice:
-                    textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
-
-        vbox:
+            
             frame:
                 style_group "pref"
                 has vbox
@@ -452,16 +661,237 @@ screen preferences:
                         textbutton _("Test"):
                             action Play("voice", config.sample_voice)
                             style "soundtest_button"
+                            
+        vbox:
+            #frame:
+            style_group "pref"
+            #    has vbox
+
+              #  label _("Avanço Rápido")
+               # textbutton _("Seen Messages") action Preference("skip", "seen")
+                #textbutton _("All Messages") action Preference("skip", "all")
+
+           # frame:
+            #    style_group "pref"
+             #   has vbox
+#
+ #               textbutton _("Begin Skipping") action Skip()
+
+           # frame:
+            #    style_group "pref"
+             #   has vbox
+
+              #  label _("After Choices")
+               # textbutton _("Stop Skipping") action Preference("after choices", "stop")
+               # textbutton _("Keep Skipping") action Preference("after choices", "skip")
+
+         #   frame:
+          #      style_group "pref"
+           #     has vbox
+#
+ #               label _("Velocidade do avanço automático")
+  #              bar value Preference("auto-forward time")
+
+              #  if config.has_voice:
+               #     textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
+
+        vbox:
+            #frame:
+            style_group "pref"
+            #    has vbox
+#
+ #               label _("Music Volume")
+  #              bar value Preference("music volume")
+#
+ #           frame:
+  #              style_group "pref"
+   #             has vbox
+#
+ #               label _("Sound Volume")
+  #              bar value Preference("sound volume")
+#
+ #               if config.sample_sound:
+  #                  textbutton _("Test"):
+   #                     action Play("sound", config.sample_sound)
+    #                    style "soundtest_button"
+
+     #       if config.has_voice:
+      #          frame:
+       #             style_group "pref"
+        #            has vbox
+#
+ #                   label _("Voice Volume")
+  #                  bar value Preference("voice volume")
+#
+ #                   textbutton _("Voice Sustain") action Preference("voice sustain", "toggle")
+  #                  if config.sample_voice:
+   #                     textbutton _("Test"):
+    #                        action Play("voice", config.sample_voice)
+     #                       style "soundtest_button"
+
+
+screen preferences2:
+
+    tag menu
+
+    # Incluye la navegación.
+    use navigation
+
+    # Coloca las columnas de navegación en una cuadrícula de anchura 3.
+    grid 3 1:
+        style_group "prefs"
+        xfill True
+
+        # Columna izquierda.
+        vbox:
+            xpos 100
+            ypos 100
+            
+            frame:
+                style_group "pref"
+                has vbox
+                
+                label _("Display")
+                textbutton _("Window") action Preference("display", "window")
+                textbutton _("Fullscreen") action Preference("display", "fullscreen")
+
+            #frame:
+             #   style_group "pref"
+              #  has vbox
+#
+ #               label _("Transitions")
+  #              textbutton _("All") action Preference("transitions", "all")
+   #             textbutton _("None") action Preference("transitions", "none")
+
+            frame:
+                style_group "pref"
+                has vbox
+
+                label _("Text Speed")
+                bar value Preference("text speed")
+
+            frame:
+                style_group "pref"
+                has vbox
+
+                textbutton _("Joystick...") action Preference("joystick")
+            
+            frame:
+                style_group "pref"
+                has vbox
+
+                label _("Velocidade do avanço automático")
+                bar value Preference("auto-forward time")
+            
+            frame:
+                style_group "pref"
+                has vbox
+
+                label _("Music Volume")
+                bar value Preference("music volume")
+
+            frame:
+                style_group "pref"
+                has vbox
+
+                label _("Sound Volume")
+                bar value Preference("sound volume")
+
+                if config.sample_sound:
+                    textbutton _("Test"):
+                        action Play("sound", config.sample_sound)
+                        style "soundtest_button"
+
+            if config.has_voice:
+                frame:
+                    style_group "pref"
+                    has vbox
+
+                    label _("Voice Volume")
+                    bar value Preference("voice volume")
+
+                    textbutton _("Voice Sustain") action Preference("voice sustain", "toggle")
+                    if config.sample_voice:
+                        textbutton _("Test"):
+                            action Play("voice", config.sample_voice)
+                            style "soundtest_button"
+                            
+        vbox:
+            #frame:
+            style_group "pref"
+            #    has vbox
+
+              #  label _("Avanço Rápido")
+               # textbutton _("Seen Messages") action Preference("skip", "seen")
+                #textbutton _("All Messages") action Preference("skip", "all")
+
+           # frame:
+            #    style_group "pref"
+             #   has vbox
+#
+ #               textbutton _("Begin Skipping") action Skip()
+
+           # frame:
+            #    style_group "pref"
+             #   has vbox
+
+              #  label _("After Choices")
+               # textbutton _("Stop Skipping") action Preference("after choices", "stop")
+               # textbutton _("Keep Skipping") action Preference("after choices", "skip")
+
+         #   frame:
+          #      style_group "pref"
+           #     has vbox
+#
+ #               label _("Velocidade do avanço automático")
+  #              bar value Preference("auto-forward time")
+
+              #  if config.has_voice:
+               #     textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
+
+        vbox:
+            #frame:
+            style_group "pref"
+            #    has vbox
+#
+ #               label _("Music Volume")
+  #              bar value Preference("music volume")
+#
+ #           frame:
+  #              style_group "pref"
+   #             has vbox
+#
+ #               label _("Sound Volume")
+  #              bar value Preference("sound volume")
+#
+ #               if config.sample_sound:
+  #                  textbutton _("Test"):
+   #                     action Play("sound", config.sample_sound)
+    #                    style "soundtest_button"
+
+     #       if config.has_voice:
+      #          frame:
+       #             style_group "pref"
+        #            has vbox
+#
+ #                   label _("Voice Volume")
+  #                  bar value Preference("voice volume")
+#
+ #                   textbutton _("Voice Sustain") action Preference("voice sustain", "toggle")
+  #                  if config.sample_voice:
+   #                     textbutton _("Test"):
+    #                        action Play("voice", config.sample_voice)
+     #                       style "soundtest_button"
 
 init -2:
     style pref_frame:
         xfill True
         xmargin 5
         top_margin 5
-
+        
     style pref_vbox:
         xfill True
-
+        
     style pref_button:
         size_group "pref"
         xalign 1.0
@@ -484,15 +914,15 @@ screen yesno_prompt:
 
     modal True
 
-    window:
-        style "gm_root"
-
+    #window:
+    #    style "gm_root"
+    image "system/exit_window.png"
     frame:
         style_group "yesno"
 
         xfill True
         xmargin .05
-        ypos .1
+        yalign .4
         yanchor 0
         ypadding .05
 
@@ -503,13 +933,14 @@ screen yesno_prompt:
 
         label _(message):
             xalign 0.5
+            yalign 0.5
 
  #       hbox:
   #          xalign 0.5
    #         spacing 100
-            
-    imagebutton idle "btsimidle.png" hover "btsimhover.png" xpos 320 ypos 200 focus_mask True action yes_action
-    imagebutton idle "btnaoidle.png" hover "btnaohover.png" xpos 520 ypos 200 focus_mask True action no_action
+        
+    imagebutton idle "btsimidle.png" hover "btsimhover.png" xpos 320 yalign 0.6 focus_mask True action yes_action
+    imagebutton idle "btnaoidle.png" hover "btnaohover.png" xpos 520 yalign 0.6 focus_mask True action no_action
          #   textbutton _("Yes") action yes_action
     #        textbutton _("No") action no_action
 
@@ -540,13 +971,13 @@ screen quick_menu:
         yalign 1.0
 
         textbutton _("Back") action Rollback()
-        textbutton _("Save") action ShowMenu('save')
-        textbutton _("Q.Save") action QuickSave()
-        textbutton _("Q.Load") action QuickLoad()
-        textbutton _("Skip") action Skip()
-        textbutton _("F.Skip") action Skip(fast=True, confirm=True)
+        textbutton _("Save") action ShowMenu('save2')
+        textbutton _("Quick Save") action QuickSave()
+        textbutton _("Quick Load") action QuickLoad()
+        textbutton _("Avanço Rápido") action Skip()
+        textbutton _("Pular") action Skip(fast=True, confirm=True)
         textbutton _("Auto") action Preference("auto-forward", "toggle")
-        textbutton _("Prefs") action ShowMenu('preferences')
+       # textbutton _("Prefs") action ShowMenu('preferences')
 
 init -2:
     style quick_button:
@@ -562,4 +993,3 @@ init -2:
         selected_idle_color "#cc08"
         selected_hover_color "#cc0"
         insensitive_color "#4448"
-
