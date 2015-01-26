@@ -45,36 +45,86 @@ image movie = Movie(size=(1024, 786))
 #Public var
 init:
     $ centro = Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5)
-  
+
+init python:
+    globalSave = MultiPersistent("fate.mot.com")
+    gambTheme = True
+    botaoSave = "menu"
+    #titleMenu = globalSave.titleMenu
+    
 ####################################################################
 
-#Splash
-label splashscreen:
-    scene black
-    with Pause(2)
-    show splash at centro with fade 
-    with Pause(3)
-    scene white with dissolve
-    with Pause(1)
-    show splash2 at centro with fade
-    with Pause(3)
-    scene white with dissolve
-    with Pause(1)
-    show splash3 at centro with fade
-    with Pause(3)
-    scene black
-    with Pause(1)
-return
+###################################################
+label splashscreen:                      # Splash #
+    scene black                          ##########
+    #$ gambTheme = True
+    if globalSave.splash:                #
+        $ renpy.pause(2)                 #
+    else:                                #
+        $ renpy.pause(2, hard=True)      #
+                                         #
+    show splash at centro with fade      #
+    if globalSave.splash:                #
+        $ renpy.pause(3)                 #
+    else:                                #
+        $ renpy.pause(3, hard=True)      #
+                                         #
+    scene white with dissolve            #
+    if globalSave.splash:                #
+        $ renpy.pause(1)                 # 
+    else:                                #
+        $ renpy.pause(1, hard=True)      #
+                                         #
+    show splash2 at centro with fade     #
+    if globalSave.splash:                #
+        $ renpy.pause(3)                 #
+    else:                                #
+        $ renpy.pause(3, hard=True)      #
+                                         #
+    scene white with dissolve            #
+    if globalSave.splash:                #
+        $ renpy.pause(1)                 # 
+    else:                                #
+        $ renpy.pause(1, hard=True)      #
+                                         #
+    show splash3 at centro with fade     #
+    if globalSave.splash:                #
+        $ renpy.pause(3)                 #
+    else:                                #
+        $ renpy.pause(3, hard=True)      #
+                                         #
+    scene black                          #
+    if globalSave.splash:                #
+        $ renpy.pause(1)                 # 
+    else:                                #
+        $ renpy.pause(1, hard=True)      #             
+return                                   #
+##########################################
 
 #Inicio
 label start:
-    stop music fadeout 4
-    scene fatestn with Dissolve(5)
+    $ gambTheme = False
+    $ botaoSave = "inGame"
+#############################################
+    #$_game_menu_screen = None      # Pause # Total Fail!
+    #show screen mymenu             #########
+####################################
+    
+########################################################    
+    $ globalSave.titleMenu = "default"     # Back Menu #
+    $ globalSave.splash = True             #############
+    $ globalSave.save()                    #
+############################################
+    
+label inicio:
+########################################################################    
+    stop music fadeout 4                              # Telas de Aviso #
+    scene fatestn with Dissolve(5)                    ##################
     scene rated1 with Dissolve(3)
     with Pause(2)
     narrador "―――――――――――――――\nAtenção!\n―――――――――――――――\nEsta é uma obra de ficção.\nTodas as configurações desta história são fictícias e não têm nenhuma conexão com quaisquer indivíduos ou organizações reais.\nTodos os personagens que aparecem neste jogo tem mais de 18 anos de idade."
     nvl clear
-    "Escolha com sabedoria!"
+    #"Escolha com sabedoria!"
     menu censura:
         "Escolha com sabedoria!"
         "Fate/Stay Night (12+)":
