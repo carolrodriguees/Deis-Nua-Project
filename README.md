@@ -4,6 +4,6 @@ Não há mais necessidade de deixar os textos entre aspas, a menos que o texto s
 
 Exemplo de fala:
 
-"_______ Eu lhe pergunto. É você o meu Mestre?"   <- Manter aspas
+`"_______ Eu lhe pergunto. É você o meu Mestre?"`   *<- Manter aspas*
 
-*Os textos que já foram traduzidos com as aspas que eu pedi, não mude. Só considere para as próximas traduções!
+*Os textos que já foram traduzidos com as aspas que eu pedi, não mude. Só considere para as próximas traduções!*
