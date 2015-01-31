@@ -192,10 +192,10 @@ screen main_menu:
         ##############################################################################################
         
 ################################################## Botões Main Menu #######################################################################
-    imagebutton idle "btnewidle.png" hover "btnewhover.png" xpos 120 ypos 650 focus_mask True action Start() 
-    imagebutton idle"btloadidle.png" hover "btloadhover.png" xpos 320 ypos 650 focus_mask True action ShowMenu('load')
-    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" xpos 520 ypos 650 focus_mask True action ShowMenu('preferences')
-    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 720 ypos 650 focus_mask True action Quit(confirm=True)
+    imagebutton idle "btnewidle.png" hover "btnewhover.png" xpos 120 ypos 650 focus_mask True action Start() activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle"btloadidle.png" hover "btloadhover.png" xpos 320 ypos 650 focus_mask True action ShowMenu('load') activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" xpos 520 ypos 650 focus_mask True action ShowMenu('preferences') activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 720 ypos 650 focus_mask True action Quit(confirm=True) activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
         
         ###################################################################################################################################
         
@@ -345,16 +345,16 @@ screen save2:
         
         
     text "Salvar" xanchor 0.5 xpos 0.873 ypos 45
-    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return()
-    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences")
-    if botaoSave == "menu":
-        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True
-    else:
-        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2")
-    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load")
-    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()
-    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps")
-    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit()
+    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return() activate_sound "menuselect.ogg" 
+    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences") activate_sound "menuselect.ogg" 
+    #if botaoSave == "menu":
+    #    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True
+    #else:
+    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2") activate_sound "menuselect.ogg" 
+    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load") activate_sound "menuselect.ogg" 
+    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()  activate_sound "menuselect.ogg"
+    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps") activate_sound "menuselect.ogg" 
+    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit() activate_sound "menuselect.ogg" 
     
     use file_picker
 
@@ -373,16 +373,16 @@ screen load:
         
         
     text "Carregar" xanchor 0.5 xpos 0.873 ypos 45
-    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return()
-    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences")
-    if botaoSave == "menu":
-        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True
-    else:
-        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2")
-    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load")
-    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()
-    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps")
-    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit()
+    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return() activate_sound "menuselect.ogg" 
+    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences") activate_sound "menuselect.ogg" 
+    #if botaoSave == "menu":
+    #    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True
+    #else:
+    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2") activate_sound "menuselect.ogg" 
+    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load") activate_sound "menuselect.ogg" 
+    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu() activate_sound "menuselect.ogg" 
+    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps") activate_sound "menuselect.ogg" 
+    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit() activate_sound "menuselect.ogg" 
     
     use file_picker
 
@@ -505,16 +505,16 @@ screen helps:
     
     text "Ajuda" xanchor 0.5 xpos 0.873 ypos 45
     
-    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return()
-    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences")
-    if botaoSave == "menu":
-        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True
-    else:
-        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2")
-    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load")
-    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()
-    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps")
-    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit()
+    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return() activate_sound "menuselect.ogg" 
+    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences") activate_sound "menuselect.ogg" 
+    #if botaoSave == "menu":
+    #    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True
+    #else:
+    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2") activate_sound "menuselect.ogg" 
+    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load") activate_sound "menuselect.ogg" 
+    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu() activate_sound "menuselect.ogg" 
+    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps") activate_sound "menuselect.ogg" 
+    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit() activate_sound "menuselect.ogg" 
     
     
 
@@ -526,13 +526,13 @@ screen save:
     
     image "layeradd.png"
     text "Pause" xanchor 0.5 xpos 0.873 ypos 45
-    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask True action Return()
-    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences")
-    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2")
-    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load")
-    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()
-    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps")
-    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit() 
+    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask True action Return() activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences") activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2") activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load") activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu() activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps") activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit() activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
     
     #key "K_ESCAPE" action Hide("pausegame")
     #window:
@@ -572,16 +572,16 @@ screen preferences:
     else:
         image "layeradd.png"
     text "Opções" xanchor 0.5 xpos 0.873 ypos 45
-    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return()
-    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences")
-    if botaoSave == "menu":
-        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True
-    else:
-        imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2")
-    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load")
-    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()
-    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps")
-    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit()     
+    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return() activate_sound "menuselect.ogg" 
+    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences") activate_sound "menuselect.ogg" 
+    #if botaoSave == "menu":
+    #    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True
+    #else:
+    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2") activate_sound "menuselect.ogg" 
+    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load") activate_sound "menuselect.ogg" 
+    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu() activate_sound "menuselect.ogg"
+    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps") activate_sound "menuselect.ogg"
+    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit() activate_sound "menuselect.ogg" 
 
     # Coloca las columnas de navegación en una cuadrícula de anchura 3.
     grid 3 1:
@@ -939,8 +939,8 @@ screen yesno_prompt:
   #          xalign 0.5
    #         spacing 100
         
-    imagebutton idle "btsimidle.png" hover "btsimhover.png" xpos 320 yalign 0.6 focus_mask True action yes_action
-    imagebutton idle "btnaoidle.png" hover "btnaohover.png" xpos 520 yalign 0.6 focus_mask True action no_action
+    imagebutton idle "btsimidle.png" hover "btsimhover.png" xpos 320 yalign 0.6 focus_mask True action yes_action activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "btnaoidle.png" hover "btnaohover.png" xpos 520 yalign 0.6 focus_mask True action no_action activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
          #   textbutton _("Yes") action yes_action
     #        textbutton _("No") action no_action
 
