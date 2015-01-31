@@ -1,4 +1,4 @@
-Foi um impulso como um relâmpago.
+Foi um impulso como um relâmpago. 
 A ponta da lança empurrou para furar meu coração.
 Seria inútil tentar me esquivar.
 Sendo luz, é invisível ao olho humano.
@@ -15,7 +15,7 @@ O som não era bonito em tudo.
 Na verdade, foi o som de aço.
 É justo que o cavaleiro é bonito o suficiente para transformá-lo em um som encantador como um sino.
 
-"_______ Eu lhe pergunto. É você o meu Mestre?"
+"_______ Eu lhe pergunto. É você o meu Mestre?" 
 
 Ela pergunta em uma voz que ilumina a escuridão.
 
