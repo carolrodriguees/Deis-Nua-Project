@@ -16,7 +16,7 @@
 ###################################################################################################
 #Personagens
 define narrador = Character(None, kind=nvl)
-
+define narrador2 = Character(None)
 #Backgrounds
 image rated1 = "00rated01.png"
 image fatestn = "titleopt.png"
@@ -47,6 +47,7 @@ init:
     $ centro = Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5)
 
 init python:
+    menuBak = menu
     globalSave = MultiPersistent("fate.mot.com")
     gambTheme = True
     botaoSave = "menu"
@@ -120,21 +121,20 @@ label inicio:
 ########################################################################    
     stop music fadeout 4                              # Telas de Aviso #
     scene fatestn with Dissolve(5)                    ##################
+    $ renpy.pause(1) 
     scene rated1 with Dissolve(3)
-    with Pause(2)
-    narrador "―――――――――――――――\nAtenção!\n―――――――――――――――\nEsta é uma obra de ficção.\nTodas as configurações desta história são fictícias e não têm nenhuma conexão com quaisquer indivíduos ou organizações reais.\nTodos os personagens que aparecem neste jogo tem mais de 18 anos de idade."
+    $ renpy.pause(3) 
+    narrador "――――――――――――――――――――――――――\nAtenção!\n――――――――――――――――――――――――――\n\nEsta é uma obra de ficção.\n\nTodas as personagens que compõem esta história são fictícias e não têm nenhuma conexão com quaisquer indivíduos ou organizações reais.\n\nTodos as personagens que aparecem neste jogo possuem mais de 18 anos de idade."
     nvl clear
-    #"Escolha com sabedoria!"
+    narrador "Escolha com sabedoria!"
+    nvl clear
     menu censura:
-        "Escolha com sabedoria!"
         "Fate/Stay Night (12+)":
             $ rated = "kids"
-            call introfate
         "Fate/Stay Night (16+)":
             $ rated = "ecchi"
-            call introfate
         "Fate/Stay Night (18+)":
             $ rated = "hentai"
-            call introfate
+    call introfate
 ### Prólogo Tohsaka Rin
 return
