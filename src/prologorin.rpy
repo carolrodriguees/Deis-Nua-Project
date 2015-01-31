@@ -20,7 +20,11 @@ label prologorin:
     narrador "Afinal, essa é a primeira vez que ele já deu um tapinha na minha cabeça."
     
 #Rin ZoomIn
-    scene prologorin with dissolve
+    scene prologorin:
+        xanchor 0.2
+        yanchor 0.2
+        zoom 2.0
+    with Dissolve(2)
     nvl clear
     narrador '"Eu vou ter que ir agora . Você sabe o que fazer agora , certo?"'
     
@@ -35,7 +39,7 @@ label prologorin:
     narrador "Eu acho que você poderia dizer que eu estava triste que eu não poderia dizer-lhe qualquer um deles."
     
 #Rin ZoomOut
-    scene prologorin with dissolve
+    scene prologorin with Dissolve(2)
     nvl clear
     narrador '"Coloque a Associação em sua dívida pelo tempo que você amadurecer. Eu vou deixar você decidir o que fazer depois disso. Você deve ser capaz de cuidar de si mesmo."'
     
@@ -92,7 +96,11 @@ label prologorin:
     narrador "Para escolher o meu caminho de acordo com o que ele me deixou no final."
     
 #Rin ZoomIn
-    scene prologorin with dissolve
+    scene prologorin:
+        xanchor 0.2
+        yanchor 0.2
+        zoom 2.0
+    with Dissolve(2)
     nvl clear
     narrador '\'_______Rin, o Santo Graal aparece eventualmente. É nosso dever como a família Tohsaka para ganhá-la. Mre importante, se você quiser ser um mago, você não pode evitá-lo._______\''
     
@@ -111,6 +119,6 @@ label prologorin:
     narrador "O evento que eu nunca ter esquecido está prestes a começar_______"
     
 #Fim Prólogo
-    call rin1
+    call rin1_1
 
 return
