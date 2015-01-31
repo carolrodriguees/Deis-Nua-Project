@@ -10,7 +10,7 @@ label introfate:
     with Pause(3)
     scene prologo01:
         zoom 2.0
-        linear 2.0 zoom 1.0
+        linear 3.0 zoom 1.0
     with Pause(2)
     show prologo01t at centro with dissolve
     with Pause(2)
@@ -91,12 +91,16 @@ label introfate:
     nvl clear
     narrador "\n\n\n\n\n\n\n\n\n_______ Uma leve luz azul filtra."
     narrador "O cabelo dourado brilha à luz do luar."
-    stop music fadeout 3.0
+    stop music fadeout 4
     
 #Início Fate
     scene fate with Dissolve(1)
     nvl clear
-    with Pause(3)
+    $ renpy.pause(3, hard=True)
+    
+    $ globalSave.titleMenu = "saberApp"
+    $ globalSave.save()
+    
     call prologorin
     
 return
