@@ -19,6 +19,6 @@
 >
 ```python
     "Texto de fala"
-    **Texto comum**
+    Texto comum
     Texto com alguma dúvida #Alguma dúvida....
 ```
