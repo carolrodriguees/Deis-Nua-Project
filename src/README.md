@@ -6,8 +6,8 @@ Controle de Conteúdo
 ===========
 - [Intro Fate](#intro-fate)
 - [Flashback Rin](#flashback-rin)
-- [Rin Dia 1-1](#Rin-Dia-1_1)
-- [Rin Dia 1-2](#Rin-Dia-1_2)
+- [Rin Dia 1-1](#rin-dia-1_1)
+- [Rin Dia 1-2](#rin-dia-1_2)
 
 #### Intro Fate
 
