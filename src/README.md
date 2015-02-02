@@ -6,8 +6,8 @@ Controle de Conteúdo
 ===========
 - [Intro Fate](#intro-fate)
 - [Flashback Rin](#flashback-rin)
-- [Rin Dia 1-1](#Rin-Dia-1-1)
-- [Rin Dia 1-2](#Rin-Dia-1-2)
+- [Rin Dia 1-1](#Rin-Dia-1_1)
+- [Rin Dia 1-2](#Rin-Dia-1_2)
 
 #### Intro Fate
 
@@ -33,7 +33,7 @@ Controle de Conteúdo
 * Revisão: to-do
 
 
-#### Rin Dia 1-1 [editando]
+#### Rin Dia 1_1 [editando]
 
 
 * Texto:
@@ -45,7 +45,7 @@ Controle de Conteúdo
 * Revisão:
 
 
-#### Rin Dia 1-2
+#### Rin Dia 1_2
 
 
 * Texto:
