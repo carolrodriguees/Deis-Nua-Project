@@ -1,6 +1,11 @@
 
 #Personagens
 
+###################################################
+    # $ globalSave.saberClear = True # Persistent #
+    # $ globalSave.save()            ##############
+###################################### 
+
 #Mestres
 #define narrador = Character(None, kind=nvl)
 #define rin = Character("Tohsaka Rin")

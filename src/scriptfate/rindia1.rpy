@@ -3,7 +3,7 @@
 #################
 
 #Início
-label rin1:
+label rin1_1:
     call dia1_31
 
 #Acordando Blur
@@ -60,6 +60,11 @@ label rin1:
     narrador "Desligá-lo fora, eu decidir sair da cama."
     
 #Em casa de manhã
+    scene black with blinds
+    with Pause(1)
+    scene casarin2 with blinds
+    play music "the_sunlight2.ogg"
+    
     nvl clear
     play music "the_sunlight2.ogg"
     narrador "Passando pelo corredor frio, eu entro na sala de estar frio."
@@ -73,9 +78,10 @@ label rin1:
     narrador "Em momentos como este, vivendo em seu próprio país é inconveniente."
     narrador "Se houvesse alguém para acordar antes de mim, a sala seria quente até agora."
     
+    
 #Em casa Black
     nvl clear
-    scene black with dissolve
+    scene black with blinds
     narrador "Eu lavo meu rosto na pia."
     narrador "Eu escovo meu cabelo comprido e prepare-se."
     narrador "Uma manhã fria, uma pia fria."
@@ -90,10 +96,10 @@ label rin1:
     narrador '"Cara, eu acho que eu não tenho que correr atrás de tudo."'
     narrador "Então, novamente , eu nunca faria algo tão desajeitado como correr para a escola de qualquer maneira."
     narrador "É o costume da família Tohsaka para agir com serenidade e elegância em todos os momentos."
-    stop music fadeout 3.0
+    stop music fadeout 4
     
 #Em casa Refletindo
-    scene blackmagi with dissolve
+    scene blackmagi with Dissolve(3)
     nvl clear
     narrador "Tomando um costume como esse sério deve significar que a minha família se originou a partir de um fundo muito alta classe, de fato."
     narrador 'Possuir uma mansão antiga de estilo wester é prova disso e em cima dela, a família Tohsaka é uma linhagem de feiticeiros capazes de usar o poder de "Magic".'
@@ -146,12 +152,45 @@ label rin1:
     narrador "Ele foi o mestre da família Tohsaka que disse que se a ciência está se movendo em direção ao futuro, a magia está se movendo em direção ao passado."
     narrador "Algo sobre o passado eo futuro acabar no mesmo lugar, tudo sempre correndo em direção ao ponto zero."
     narrador "Vamos adiar todas essas discussões difíceis. Eles devem esperar até que estamos velhos."
+    scene black with dissolve
     
 #Em casa na sala
-    scene casarin2 with dissolve #rever transição
+    scene casarin2 with blinds
     nvl clear
     play music "the_sunlight2.ogg"
-    stop music fadeout 3.0
+    narrador "Acabamento café da manhã, eu pegar minha bolsa."
+    narrador '"_______Oh sim. Eu deveria trazer o pingente."'
+    narrador "Eu realmente não quero tomar a coisa para a escola, mas seria um desperdício apenas para deixá-lo aqui."
+    
+    nvl clear
+    narrador '"Essa coisa tem cem anos de idade, depois de tudo. É, de longe, a maior jóia na casa."'
+    narrador "Não, isso é um eufemismo. É muito mais forte do que isso."
+    narrador "Achei isso depois da descodificação a vontade do Pai na noite passada. Ele contém o equivalente a dez anos de minha energia mágica."
+    narrador "Não foi dito ser uma relíquia de família, e isso pode muito bem ser ele."
+    
+    ##show pingente w/alpha
+    
+    nvl clear
+    narrador "Nós, os magos de Tohsaka, são hábeis com a transformação do poder. Nós colocamos nossa energia mágica em jóias sempre que temos tempo livre."
+    narrador "Para colocá-lo simplesmente , as jóias são balas e estamos a arma."
+    narrador "A única outra coisa que eu posso dizer que eu recebi do meu pai é a crista Magia da família Tohsaka gravado no meu braço esquerdo."
+    narrador "Em essência, esta é a prova do sucessor , e é como uma tatuagem que condensa toda a magia herdada da família Tohsaka."
+    
+    nvl clear
+    narrador '" ... Ele ainda não começou , mas eu acho que não faz mal para ter cuidado."'
+    narrador "Eu coloquei o pingente , que agora pode ser dito para ser lembrança do meu pai, no meu bolso."
+    
+    nvl clear #?
+    narrador '"Este é o último recurso. Quase tudo é possível com a energia mágica contida neste."'
+    narrador "São sete e meia."
+    narrador "Eu tenho que ir ou vou me atrasar para a escola."
+    stop music fadeout 4
+    
+#Caminho para a escola
+label rin1_escola:
+    nvl clear
+    scene casarin3out with slide
+    "dasd"
     
 return
     
