@@ -14,7 +14,7 @@ label introfate:
     with Pause(2)
     show prologo01t at centro with dissolve
     with Pause(2)
-    play music "0musicaprologo.ogg"
+    play music prologo1
     
 #Reflexão 1     
     scene prologo02 with flash
@@ -22,10 +22,10 @@ label introfate:
     narrador "A ponta da lança empurrou para furar meu coração."
     narrador "Seria inútil tentar me esquivar."
     narrador "Sendo luz, é invisível ao olho humano."
-    
-#Lança    
+
+#Lança
+    play sound vuts01
     scene backtrans with direitorapido
-    play sound "0vuts.ogg"
     show clang1
     with Pause(0.05)
     show clang2 with dissolve
@@ -40,7 +40,8 @@ label introfate:
     narrador "O raio que tenta me furar..."
     narrador "....É repelido pela luz da lua que tenta me salvar."
     nvl clear
-    play sound "0clang.ogg"
+    
+    play sound clang01
     narrador "Clang, um som bonito."
     narrador "\nNão, o som antes de mim é mais pesado do que o aço."
     narrador "A armadura que ela está usando não é bonito em tudo e não refinado como a noite fria."
@@ -57,7 +58,7 @@ label introfate:
     with Pause(1)
     
 #Saber 1    
-    voice "saber01-01.ogg"
+    voice "vozes/saber01-01.ogg"
     narrador '\n\n\n\n\n\n\n\n"_______ Eu lhe pergunto. É você o meu Mestre?"'
     narrador "\nEla pergunta em uma voz que ilumina a escuridão."
     
@@ -65,9 +66,9 @@ label introfate:
     scene prologo03 with Dissolve(2)
     with Pause(2)
     nvl clear
-    voice "saber01-02.ogg"
+    voice "vozes/saber01-02.ogg"
     narrador '\n\n\n\n\n\n\n\n"Eu vim adiante em resposta à sua invocação.'
-    voice "saber01-03.ogg"
+    voice "vozes/saber01-03.ogg"
     narrador 'A partir deste momento em diante, minha espada estará com você e seu destino estará comigo. Agora, o nosso contrato está completo."'
     nvl clear
     

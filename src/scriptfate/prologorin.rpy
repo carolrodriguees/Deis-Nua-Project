@@ -4,7 +4,7 @@
 
 #Início
 label prologorin:
-    play music "quiet_voice.ogg"
+    play music quietVoice
     scene white with dissolve
     narrador "Esta é uma história de dez anos atrás."
 #Rin Black    

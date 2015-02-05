@@ -6,21 +6,21 @@
 label videofate:
     $ videocheck = "fate"
     show movie
-    play movie "#introfate.ogv"
+    play movie "videos/#introfate.ogv"
     jump pausevideo
         
 #Opening Unlimited Blade Works
 label videobone:
     $ videocheck = "bone"
     show movie
-    play movie "#introbone.ogv" 
+    play movie "videos/#introbone.ogv" 
     jump pausevideo
         
 #Opening Haven's Feel
 label videofeels:
     $ videocheck = "feels"
     show movie
-    play movie "#introfeels.ogv"
+    play movie "videos/#introfeels.ogv"
     jump pausevideo
 
 #Método de pausa

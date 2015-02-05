@@ -63,7 +63,7 @@ label rin1_1:
     scene black with blinds
     with Pause(1)
     scene casarin2 with blinds
-    play music "the_sunlight2.ogg"
+    play music theSunlight2
     
     nvl clear
     play music "the_sunlight2.ogg"
@@ -157,7 +157,7 @@ label rin1_1:
 #Em casa na sala
     scene casarin2 with blinds
     nvl clear
-    play music "the_sunlight2.ogg"
+    play music theSunlight2
     narrador "Acabamento café da manhã, eu pegar minha bolsa."
     narrador '"_______Oh sim. Eu deveria trazer o pingente."'
     narrador "Eu realmente não quero tomar a coisa para a escola, mas seria um desperdício apenas para deixá-lo aqui."
@@ -180,7 +180,7 @@ label rin1_1:
     narrador '" ... Ele ainda não começou , mas eu acho que não faz mal para ter cuidado."'
     narrador "Eu coloquei o pingente , que agora pode ser dito para ser lembrança do meu pai, no meu bolso."
     
-    nvl clear #?
+    nvl clear #??
     narrador '"Este é o último recurso. Quase tudo é possível com a energia mágica contida neste."'
     narrador "São sete e meia."
     narrador "Eu tenho que ir ou vou me atrasar para a escola."
