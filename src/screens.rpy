@@ -178,27 +178,27 @@ screen main_menu:
 
     # Esta linea asegura que las otras pantallas de menú son reemplazadas.
     tag menu
-    
+
    ## add "navground.png"
 
     # The main menu buttons.
     window:
         style "mm_root"
-        
+
 ################################################## Backgrounds Variados ##############################
     if globalSave.titleMenu == "saberApp":
-        image "0prologo03.png"
-        
+        image "bg/0prologo03.png"
+
         ##############################################################################################
-        
+
 ################################################## Botões Main Menu #######################################################################
-    imagebutton idle "btnewidle.png" hover "btnewhover.png" xpos 120 ypos 650 focus_mask True action Start() activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
-    imagebutton idle"btloadidle.png" hover "btloadhover.png" xpos 320 ypos 650 focus_mask True action ShowMenu('load') activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
-    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" xpos 520 ypos 650 focus_mask True action ShowMenu('preferences') activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
-    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 720 ypos 650 focus_mask True action Quit(confirm=True) activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
-        
+    imagebutton idle "bt/btnewidle.png" hover "bt/btnewhover.png" xpos 120 ypos 650 focus_mask True action Start() activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle"bt/btloadidle.png" hover "bt/btloadhover.png" xpos 320 ypos 650 focus_mask True action ShowMenu('load') activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "bt/btoptionidle.png" hover "bt/btoptionhover.png" xpos 520 ypos 650 focus_mask True action ShowMenu('preferences') activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "bt/btexitidle.png" hover "bt/btexithover.png" xpos 720 ypos 650 focus_mask True action Quit(confirm=True) activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+
         ###################################################################################################################################
-        
+
     # Fondo del menú principal.
 
 init -2:
@@ -221,17 +221,17 @@ screen navigation:
     window:
         style "gm_root"
 #################################################### Backgrounds Variados #########################################################################################################################################################
-    
-    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return()
-    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences")
-    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save")
-    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load")
-    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()
-    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps")
-    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit()
-    
+
+    imagebutton idle "bt/btbackidle.png" hover "bt/btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return()
+    imagebutton idle "bt/btoptionidle.png" hover "bt/btoptionhover.png" selected_idle "bt/btoptionselected.png" selected_hover "bt/btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences")
+    imagebutton idle "bt/btsaveidle.png" hover "bt/btsavehover.png" selected_idle "bt/btsaveselected.png" selected_hover "bt/btsaveselected.png" insensitive "bt/btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save")
+    imagebutton idle "bt/btloadidle.png" hover "bt/btloadhover.png" selected_idle "bt/btloadselected.png" selected_hover "bt/btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load")
+    imagebutton idle "bt/btmainidle.png" hover "bt/btmainhover.png" insensitive "bt/btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()
+    imagebutton idle "bt/bthelpidle.png" hover "bt/bthelphover.png" selected_idle "bt/bthelpselected.png" selected_hover "bt/bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps")
+    imagebutton idle "bt/btexitidle.png" hover "bt/btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit()
+
     ################################################################################################################################################################################################################################
-    
+
     # Botones de navegación.
 #    frame:
  #       style_group "gm_nav"
@@ -256,28 +256,28 @@ init -2:
 
 ########################### Botões #######################################
 screen botoes:
-    
-    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return() activate_sound "menuselect.ogg" 
-    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences") activate_sound "menuselect.ogg" 
+
+    imagebutton idle "bt/btbackidle.png" hover "bt/btbackhover.png" xpos 800 ypos 100 focus_mask  True action Return() activate_sound "menuselect.ogg"
+    imagebutton idle "bt/btoptionidle.png" hover "bt/btoptionhover.png" selected_idle "bt/btoptionselected.png" selected_hover "bt/btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences") activate_sound "menuselect.ogg"
     #if botaoSave == "menu":
-    #    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True
+    #    imagebutton idle "bt/btsaveidle.png" hover "bt/btsavehover.png" selected_idle "bt/btsaveselected.png" selected_hover "bt/btsaveselected.png" insensitive "bt/btsaveground.png" xpos 800 ypos 220 focus_mask  True
     #else:
-    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2") activate_sound "menuselect.ogg" 
-    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load") activate_sound "menuselect.ogg" 
-    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()  activate_sound "menuselect.ogg"
-    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps") activate_sound "menuselect.ogg" 
-    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit() activate_sound "menuselect.ogg"  
-    
+    imagebutton idle "bt/btsaveidle.png" hover "bt/btsavehover.png" selected_idle "bt/btsaveselected.png" selected_hover "bt/btsaveselected.png" insensitive "bt/btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2") activate_sound "menuselect.ogg"
+    imagebutton idle "bt/btloadidle.png" hover "bt/btloadhover.png" selected_idle "bt/btloadselected.png" selected_hover "bt/btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load") activate_sound "menuselect.ogg"
+    imagebutton idle "bt/btmainidle.png" hover "bt/btmainhover.png" insensitive "bt/btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu()  activate_sound "menuselect.ogg"
+    imagebutton idle "bt/bthelpidle.png" hover "bt/bthelphover.png" selected_idle "bt/bthelpselected.png" selected_hover "bt/bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps") activate_sound "menuselect.ogg"
+    imagebutton idle "bt/btexitidle.png" hover "bt/btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit() activate_sound "menuselect.ogg"
+
 ########################## Fundo Alternante ##############################
 screen fundo:
-    
+
     if gambTheme:
         if globalSave.titleMenu == "saberApp":
-            image "0prologo03_blur.png"
+            image "system/0prologo03_blur.png"
         else:
-            image "titleopt.png"
+            image "system/titleopt.png"
     else:
-        image "layeradd.png"
+        image "system/layeradd.png"
 
 
 ##############################################################################
@@ -297,7 +297,7 @@ screen file_picker:
         xpos 40
         ypos 50
         style "file_picker_frame"
-        
+
         has vbox
 
         # Los botones superiores permiten al usuario escoger entre
@@ -330,7 +330,7 @@ screen file_picker:
             xfill False
             style_group "file_picker"
             xmaximum 600
-            
+
             # Presenta diez espacios para archivos, numerados de 1 a 10.
             for i in range(1, columns * rows + 1):
 
@@ -360,9 +360,9 @@ screen save2:
     # Esta linea asegura que las otras pantallas de menú son reemplazadas.
     tag menu
     use fundo
-       
+
     text "Salvar" xanchor 0.5 xpos 0.873 ypos 45
-    
+
     use botoes
     use file_picker
 
@@ -371,11 +371,11 @@ screen load:
 
     # Esta linea asegura que las otras pantallas de menú son reemplazadas.
     tag menu
-    
+
     use fundo
-        
+
     text "Carregar" xanchor 0.5 xpos 0.873 ypos 45
-    
+
     use botoes
     use file_picker
 
@@ -395,7 +395,7 @@ init -2:
     style file_picker_nav_button_text is small_button_text
     style file_picker_button is large_button
     style file_picker_text is large_button_text
-    
+
 
 ################################################################################################################
 # Opciones
@@ -406,13 +406,13 @@ init -2:
 
 screen helps:
     tag menu
-    
+
     use fundo
-    
+
     vbox:
         xpos 40
         ypos 50
-        
+
         frame:
             ymargin 3
             has vbox
@@ -453,64 +453,64 @@ screen helps:
             ypos -1.1
             has vbox
             textbutton "Mais ajuda!" action Help()
-    
+
     imagebutton idle "ajuda/right.png" hover "ajuda/right.png" xpos 170 ypos 63 focus_mask True
     imagebutton idle "ajuda/esc.png" hover "ajuda/esc.png" xpos 55 ypos 63 focus_mask True
     text "Pausa o jogo e mostra o menu." xanchor 1.0 xpos 0.74 ypos 0.1
     text "{color=#00f} ▪{/color}" xpos 124 ypos 0.1
-    
+
     imagebutton idle "ajuda/return.png" hover "ajuda/return.png" xpos 55 ypos 159 focus_mask True
     imagebutton idle "ajuda/space.png" hover "ajuda/space.png" xpos 150 ypos 159 focus_mask True
     imagebutton idle "ajuda/left.png" hover "ajuda/left.png" xpos 295 ypos 159 focus_mask True
     text "Segue na história." xanchor 1.0 xpos 0.74 ypos 0.23
     text "{color=#00f} ▪{/color}" xpos 124 ypos 0.217
     text "{color=#00f} ▪{/color}" xpos 245 ypos 0.217
-    
+
     imagebutton idle "ajuda/ctrl.png" hover "ajuda/ctrl.png" xpos 55 ypos 256 focus_mask True
     text "Pressionando, ativa o modo rápido." xanchor 1.0 xpos 0.74 ypos 0.35
-    
+
     imagebutton idle "ajuda/tab.png" hover "ajuda/tab.png" xpos 55 ypos 354 focus_mask True
-    text "Ativa ou Desativa o modo rápido." xanchor 1.0 xpos 0.74 ypos 0.475 
+    text "Ativa ou Desativa o modo rápido." xanchor 1.0 xpos 0.74 ypos 0.475
 
     imagebutton idle "ajuda/scroll.png" hover "ajuda/scroll.png" xpos 70 ypos 446 focus_mask True
     text "Avança ou Retrocede na história." xanchor 1.0 xpos 0.74 ypos 0.60
-    
+
     imagebutton idle "ajuda/h.png" hover "ajuda/h.png" xpos 55 ypos 543 focus_mask True
     imagebutton idle "ajuda/mid.png" hover "ajuda/mid.png" xpos 160 ypos 541 focus_mask True
     text "Oculta tudo e mostra o Backgroud." xanchor 1.0 xpos 0.74 ypos 0.73
     text "{color=#00f}▪{/color}" xpos 130 ypos 0.72
-    
+
     imagebutton idle "ajuda/f.png" hover "ajuda/f.png" xpos 55 ypos 640 focus_mask True
     text "Alterna entre Janela e Tela Cheia." xanchor 1.0 xpos 0.74 ypos 0.85
-    
+
     text "Ajuda" xanchor 0.5 xpos 0.873 ypos 45
-    
+
     use botoes
 
 ## Tela de Pause
 screen save:
-    
+
     tag menu
     modal True
-    
-    image "layeradd.png"
-    
+
+    image "system/layeradd.png"
+
     text "Pause" xanchor 0.5 xpos 0.873 ypos 45
-    
-    imagebutton idle "btbackidle.png" hover "btbackhover.png" xpos 800 ypos 100 focus_mask True action Return() activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
-    imagebutton idle "btoptionidle.png" hover "btoptionhover.png" selected_idle "btoptionselected.png" selected_hover "btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences") activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
-    imagebutton idle "btsaveidle.png" hover "btsavehover.png" selected_idle "btsaveselected.png" selected_hover "btsaveselected.png" insensitive "btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2") activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
-    imagebutton idle "btloadidle.png" hover "btloadhover.png" selected_idle "btloadselected.png" selected_hover "btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load") activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
-    imagebutton idle "btmainidle.png" hover "btmainhover.png" insensitive "btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu() activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
-    imagebutton idle "bthelpidle.png" hover "bthelphover.png" selected_idle "bthelpselected.png" selected_hover "bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps") activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
-    imagebutton idle "btexitidle.png" hover "btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit() activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
-    
+
+    imagebutton idle "bt/btbackidle.png" hover "bt/btbackhover.png" xpos 800 ypos 100 focus_mask True action Return() activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "bt/btoptionidle.png" hover "bt/btoptionhover.png" selected_idle "bt/btoptionselected.png" selected_hover "bt/btoptionselected.png" xpos 800 ypos 160 focus_mask  True action ShowMenu("preferences") activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "bt/btsaveidle.png" hover "bt/btsavehover.png" selected_idle "bt/btsaveselected.png" selected_hover "bt/btsaveselected.png" insensitive "bt/btsaveground.png" xpos 800 ypos 220 focus_mask  True action ShowMenu("save2") activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "bt/btloadidle.png" hover "bt/btloadhover.png" selected_idle "bt/btloadselected.png" selected_hover "bt/btloadselected.png" xpos 800 ypos 280 focus_mask  True action ShowMenu("load") activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "bt/btmainidle.png" hover "bt/btmainhover.png" insensitive "bt/btmainground.png" xpos 800 ypos 340 focus_mask  True action MainMenu() activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "bt/bthelpidle.png" hover "bt/bthelphover.png" selected_idle "bt/bthelpselected.png" selected_hover "bt/bthelpselected.png" xpos 800 ypos 400 focus_mask True action ShowMenu("helps") activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "bt/btexitidle.png" hover "bt/btexithover.png" xpos 800 ypos 460 focus_mask  True action Quit() activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+
     #key "K_ESCAPE" action Hide("pausegame")
     #window:
         #style "menu_pause"
         #id "my_id"
         #align (0.0, 0.0)
-        #at my_transf    
+        #at my_transf
         #xmargin 10
         #ymargin 10
     #frame:
@@ -519,10 +519,10 @@ screen save:
     #    ymargin 10
     #    hbox:
     #        text " Pause"
-    
-           
-    
-    
+
+
+
+
 #screen mymenu:
 #    key "mousedown_3" action If(renpy.get_screen("pausegame"), Hide("pausegame"), Show("pausegame"))
 #    key "K_ESCAPE" action If(renpy.get_screen("pausegame"), Hide("pausegame"), Show("pausegame"))
@@ -536,9 +536,9 @@ screen preferences:
 
     # Incluye la navegación.
     use fundo
-    
+
     text "Opções" xanchor 0.5 xpos 0.873 ypos 45
-    
+
     use botoes
 
     # Coloca las columnas de navegación en una cuadrícula de anchura 3.
@@ -550,11 +550,11 @@ screen preferences:
         vbox:
             xpos 100
             ypos 100
-            
+
             frame:
                 style_group "pref"
                 has vbox
-                
+
                 label _("Display")
                 textbutton _("Window") action Preference("display", "window")
                 textbutton _("Fullscreen") action Preference("display", "fullscreen")
@@ -579,14 +579,14 @@ screen preferences:
                 has vbox
 
                 textbutton _("Joystick...") action Preference("joystick")
-            
+
             frame:
                 style_group "pref"
                 has vbox
 
                 label _("Velocidade do avanço automático")
                 bar value Preference("auto-forward time")
-            
+
             frame:
                 style_group "pref"
                 has vbox
@@ -619,7 +619,7 @@ screen preferences:
                         textbutton _("Test"):
                             action Play("voice", config.sample_voice)
                             style "soundtest_button"
-                            
+
         vbox:
             #frame:
             style_group "pref"
@@ -694,10 +694,10 @@ init -2:
         xfill True
         xmargin 5
         top_margin 5
-        
+
     style pref_vbox:
         xfill True
-        
+
     style pref_button:
         size_group "pref"
         xalign 1.0
@@ -744,9 +744,9 @@ screen yesno_prompt:
  #       hbox:
   #          xalign 0.5
    #         spacing 100
-        
-    imagebutton idle "btsimidle.png" hover "btsimhover.png" xpos 320 yalign 0.6 focus_mask True action yes_action activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
-    imagebutton idle "btnaoidle.png" hover "btnaohover.png" xpos 520 yalign 0.6 focus_mask True action no_action activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+
+    imagebutton idle "bt/btsimidle.png" hover "bt/btsimhover.png" xpos 320 yalign 0.6 focus_mask True action yes_action activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
+    imagebutton idle "bt/btnaoidle.png" hover "bt/btnaohover.png" xpos 520 yalign 0.6 focus_mask True action no_action activate_sound "menuselect.ogg" hover_sound "menuhover.ogg"
          #   textbutton _("Yes") action yes_action
     #        textbutton _("No") action no_action
 

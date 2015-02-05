@@ -62,9 +62,9 @@ init -1 python hide:
     ## - La función de tema acepta una serie de parámetros que pueden
     ##   personalizar la paleta de colores.
 
-    theme.bordered(
-        ## Theme: Bordered
-        ## Color scheme: Favorite Jeans
+    theme.crayon(
+        ## Theme: Crayon
+        ## Color scheme: Vintage
 
         ## The color of an idle widget face.
         widget = "#6cdee8",
@@ -89,17 +89,17 @@ init -1 python hide:
         label = "#ffffff",
 
         ## The color of a frame containing widgets.
-        frame = "#000000",
+        frame = "#15a99d",
 
         ## The background of the main menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        mm_root = "title.png",
+        mm_root = "system/title.png",
 
         ## The background of the game menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        gm_root = "titleopt.png",
+        gm_root = "system/titleopt.png",
 
         ## If this is True, the in-game window is rounded. If False,
         ## the in-game window is square.
@@ -191,7 +191,7 @@ init -1 python hide:
     ## The file containing the default font.
     ## - Archivo del tipo de letra.
 
-    # style.default.font = "DejaVuSans.ttf"
+    style.default.font = "DejaVuSans.ttf"
 
     ## The default size of text.
     ## - Tamaño de letra por defecto.
@@ -228,8 +228,8 @@ init -1 python hide:
     ## Sounds that are used when button and imagemaps are clicked.
     ## - Sonidos utilizados cuando se hace clic en un botón.
 
-    # style.button.activate_sound = "click.wav"
-    # style.imagemap.activate_sound = "click.wav"
+    style.button.activate_sound = "menuhover.ogg"
+    style.imagemap.activate_sound = "menuhover.ogg"
 
     ## Sounds that are used when entering and exiting the game menu.
     ## - Sonidos utilizados cuando se entra o sale del menú del juego.
@@ -277,48 +277,48 @@ init -1 python hide:
 
     ## Used when entering the game menu from the game.
     ## - Desde el juego al menú del juego.
-    config.enter_transition = None
+    config.enter_transition = dissolve
 
     ## Used when exiting the game menu to the game.
     ## - Desde el menú del juego al juego.
-    config.exit_transition = None
+    config.exit_transition = dissolve
 
     ## Used between screens of the game menu.
     ## - Entre pantallas del menú del juego.
-    config.intra_transition = None
+    config.intra_transition = dissolve
 
     ## Used when entering the game menu from the main menu.
     ## - Desde el menú principal al menú del juego.
-    config.main_game_transition = None
+    config.main_game_transition = dissolve
 
     ## Used when returning to the main menu from the game.
     ## - Desde el juego al menú principal.
-    config.game_main_transition = None
+    config.game_main_transition = dissolve
 
     ## Used when entering the main menu from the splashscreen.
     ## - Desde la pantalla splash al menú principal.
-    config.end_splash_transition = None
+    config.end_splash_transition = dissolve
 
     ## Used when entering the main menu after the game has ended.
     ## - Al menú principal cuando el juego ha terminado.
-    config.end_game_transition = None
+    config.end_game_transition = dissolve
 
     ## Used when a game is loaded.
     ## - Cuando se carga una partida.
-    config.after_load_transition = None
+    config.after_load_transition = dissolve
 
     ## Used when the window is shown.
     ## - Cuando se muestra una ventana.
-    config.window_show_transition = None
+    config.window_show_transition = dissolve
 
     ## Used when the window is hidden.
     ## - Cuando se oculta una ventana.
-    config.window_hide_transition = None
+    config.window_hide_transition = dissolve
 
     ## Used when showing NVL-mode text directly after ADV-mode text.
     ## - Cuando se usa texto en modo NVL inmediatamente después de
     ##   texto en modo ADV.
-    config.adv_nvl_transition = None
+    config.adv_nvl_transition = dissolve
 
     ## Used when showing ADV-mode text directly after NVL-mode text.
     ## - Cuando se usa texto en modo ADV inmediatamente después de
@@ -327,19 +327,19 @@ init -1 python hide:
 
     ## Used when yesno is shown.
     ## - Cuando se muestra la pantalla Sí/No
-    config.enter_yesno_transition = None
+    config.enter_yesno_transition = dissolve
 
     ## Used when the yesno is hidden.
     ## - Cuando se oculta la pantalla Sí/No
-    config.exit_yesno_transition = None
+    config.exit_yesno_transition = dissolve
 
     ## Used when entering a replay.
     ## - Cuando se entra a una repetición.
-    config.enter_replay_transition = None
+    config.enter_replay_transition = dissolve
 
     ## Used when exiting a replay.
     ## - Cuando se sale de una repetición.
-    config.exit_replay_transition = None
+    config.exit_replay_transition = dissolve
 
     ## Used when the image is changed by a say statement with image attributes.
     ## - Cuando la imagen cambia por una sentencia 'say' con atributos de
@@ -378,7 +378,7 @@ init -1 python hide:
     ## - Velocidad del texto por defecto en caracteres por segundo.
     ##   0 es infinito.
 
-    config.default_text_cps = 0
+    config.default_text_cps = 50
 
     ## The default auto-forward time setting.
     ## - El ajuste de auto-avance por defecto.
@@ -388,23 +388,27 @@ init -1 python hide:
     #########################################
     ## More customizations can go here.
     ## - Más personalizaciones pueden ir aquí.
-    
-    style.nvl_window.background = "nvl_window.png"
+
+    #$_game_menu_screen = None
+    style.pref_button_text.size = 20
+    style.nvl_window.background = "system/nvl_window.png"
     style.nvl_vbox.box_spacing = 10
     style.nvl_window.xpadding = 120
     style.nvl_window.ypadding = 100
-    
+    config.thumbnail_width = 140
+    config.thumbnail_height = 110
+
     #Code for customizing the in-game menu choices
 
     ##Code for customization of choice BG
     #style.menu_choice_button.background = Frame("FILE NAME HERE",28,9)
     #style.menu_choice_button.hover_background = Frame("FILE NAME HERE",28,9)
     style.menu_choice_button.yminimum = 60
-    
+
     ##Code for customization of text in the choice button
     style.menu_choice.color = "#fff"
-    style.menu_choice.size = 18
-    style.menu_choice.outlines = [(2, "#3f603e", 0, 0)]
+    style.menu_choice.size = 20
+    #style.menu_choice.outlines = [(2, "#3f603e", 0, 0)]
     # style.menu_choice.hover_color = "#fff"
     # style.menu_choice.hover_outlines = [(2, "#000", 0, 0)]
 
@@ -460,8 +464,9 @@ init python:
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
 
+
     ## To archive files, classify them as 'archive'.
-    
+
     # Declare two archives.
     build.archive("scripts", "all")
     build.archive("images", "all")
@@ -478,7 +483,7 @@ init python:
     build.classify("game/**.ogv", "movies")
     build.classify("game/**.ogg", "sounds")
     build.classify("game/**.wav", "sounds")
-    
+
     # build.classify('game/**.png', 'archive')
     # build.classify('game/**.jpg', 'archive')
 
@@ -487,4 +492,3 @@ init python:
 
     build.documentation('*.html')
     build.documentation('*.txt')
-    
