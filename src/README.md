@@ -4,10 +4,10 @@
 
 Controle de Conteúdo
 ===========
-- [Intro Fate](#intro-fate)
-- [Flashback Rin](#flashback-rin)
-- [Rin Dia 1-1](#rin-dia-1_1)
-- [Rin Dia 1-2](#rin-dia-1_2)
+1. [Intro Fate](#intro-fate)
+2. [Flashback Rin](#flashback-rin)
+3. [Rin Dia 1-1](#rin-dia-1_1)
+4. [Rin Dia 1-2](#rin-dia-1_2)
 
 #### Intro Fate
 
