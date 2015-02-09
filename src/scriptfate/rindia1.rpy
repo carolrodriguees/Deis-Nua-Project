@@ -164,11 +164,17 @@ label rin1_1:
 
     nvl clear
     narrador '"Essa coisa tem cem anos de idade, depois de tudo. É, de longe, a maior jóia na casa."'
+
+    window hide
+    show pendant2:
+        alpha 0.0
+        linear 1.0 alpha 0.7
+
+    with Pause(2)
+    window show
     narrador "Não, isso é um eufemismo. É muito mais forte do que isso."
     narrador "Achei isso depois da descodificação a vontade do Pai na noite passada. Ele contém o equivalente a dez anos de minha energia mágica."
     narrador "Não foi dito ser uma relíquia de família, e isso pode muito bem ser ele."
-
-    ##show pingente w/alpha
 
     nvl clear
     narrador "Nós, os magos de Tohsaka, são hábeis com a transformação do poder. Nós colocamos nossa energia mágica em jóias sempre que temos tempo livre."
