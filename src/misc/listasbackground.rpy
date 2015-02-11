@@ -25,3 +25,6 @@ init:
     image pendant1 = "bg/1pendant01.png"
     image pendant2 = "bg/1pendant02.png"
     image pendant3 = "bg/1pendant03.png"
+    image beco1 = "bg/1beco01.png"
+    image colegiopt1 = "bg/1colegio01.png"
+    image colegioarco1 = "bg/1colegio02.png"

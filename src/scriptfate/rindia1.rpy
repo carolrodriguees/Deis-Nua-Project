@@ -219,7 +219,7 @@ label rin1_escola:
     narrador "He knows about lots of boring things."
 
 #Passando pelo beco
-#    scene beco
+    scene beco1 with dissolve
     nvl clear
     narrador '"_______Huh?"'
     narrador "Stepping outside ..."
@@ -233,9 +233,9 @@ label rin1_escola:
     narrador '"…Well, I guess there are days like this."'
     narrador "Perhaps everyone slept in today."
     narrador "Its unusually cold, so I bet everyone's still wrapped up in their warm beds."
-
+label debug:
 #No colégio
-#    scene colegio
+    scene colegiopt1 with dissolve
     nvl clear
     narrador '"Hm... But even so..."'
     narrador "Its strange ..."
@@ -245,7 +245,9 @@ label rin1_escola:
 
 #A wild Mitsuzuri Ayako appears!
     nvl clear
-#    show ayako wonder at center
+    show ayako wonder at center with dissolve
+    with Pause(2)
+    show ayako smile at center with dissolve
 
 
 
