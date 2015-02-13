@@ -28,3 +28,4 @@ init:
     image beco1 = "bg/1beco01.png"
     image colegiopt1 = "bg/1colegio01.png"
     image colegioarco1 = "bg/1colegio02.png"
+    image colegioarco2 = "bg/1colegio03.png"
