@@ -192,7 +192,7 @@ label rin1_1:
     narrador "Eu tenho que ir ou vou me atrasar para a escola."
     stop music fadeout 4
 
-#Caminho para a escola
+#Caminho para a escola ##########################################################################################################
 label rin1_escola:
     nvl clear
     scene casarin3out
@@ -219,6 +219,7 @@ label rin1_escola:
     narrador "He knows about lots of boring things."
 
 #Passando pelo beco
+#som do silencio########################
     scene beco1 with dissolve
     nvl clear
     narrador '"_______Huh?"'
@@ -237,6 +238,7 @@ label debug:
 #No colégio
     scene colegiopt1 with dissolve
     nvl clear
+    #vento######
     narrador '"Hm... But even so..."'
     narrador "Its strange ..."
     narrador "At seven thirty, ..."
@@ -244,10 +246,61 @@ label debug:
     narrador "In other words ..."
 
 #A wild Mitsuzuri Ayako appears!
+    play music theSunlight2
     nvl clear
     show ayako wonder at center with dissolve
-    with Pause(2)
+    with Pause(1)
+    ayako '"Oh, Tohsaka! Acordou cedo hoje."'
+
+    rin '"Como eu suspeitei..."'
+    narrador "With a small sigh, I turn to the girl who addressed me."
+
     show ayako smile at center with dissolve
+    ayako '"Morning. It really is cold today, huh?"'
+    narrador "This girl, speaking so frankly, is Mitsuzuri Ayako."
+    narrador "Shes my classmate in class 2-A, and there are a lot of stories about her."
+
+    nvl clear
+    rin '"Good morning, Mitsuzuri-san. Please excuse the abrupt question, but do you know what time it is?"'
+    show ayako think at center with dissolve
+    ayako '"Huh? Its almost seven. Are you still asleep?"'
+
+    nvl clear
+    show ayako closeeyes at center with dissolve
+    narrador "She waves her hand in front of me, wondering if Im alright."
+    narrador "She is one of the few friends who know I am not a morning person."
+    narrador "…In other words, she thinks Im not fully awake yet."
+
+    nvl clear
+    rin '"I guess the clocks at my house were an hour fast. All of them.'
+    rin 'Not just my alarm clock, but the wall clocks as well."'
+    narrador "Really, just whats going on here?"
+    narrador "Did Father arrange for all the clocks to go mad when the pendant was removed from the basement?"
+
+    nvl clear
+    show ayako ein at center with dissolve
+    ayako '"Tohsaka?"'
+    rin '"Dont worry, its nothing. Anyways, are you off to morning practice as usual?"'
+    show ayako closeeyes at center with dissolve
+    ayako '"Yeah. The archery club has lots of problem students and one good member quit. So I have to get them to look good to attract the new freshmen in April."'
+
+    nvl clear
+    rin '"I see. Theres always something to worry about, isnt there?"'
+    show ayako think at center with dissolve
+    ayako '"You can say that since its none of your concern. Oh, do you wanna come? The guys will love it if you come and watch."'
+    show ayako wonder at center with dissolve
+    rin '"_______Archery club, huh?"'
+
+    nvl clear
+    narrador "I have three acquaintances in the archery club."
+    narrador "One is Ayako, the person before me right now, and the other two are people I barely talk to."
+    narrador "And for one of those two, the word acquaintance doesnt really suffice."
+    narrador "I became friends with Ayako because I had been watching the archery club from afar."
+
+    nvl clear
+    rin '"All right. Ill go if all I have to do is watch. I have nothing else to do this early anyways."'
+    show ayako smile at center with dissolve
+    ayako '"Great, lets go right now then."'
 
 
 
